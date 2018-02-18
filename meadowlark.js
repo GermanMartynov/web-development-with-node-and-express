@@ -15,6 +15,12 @@ app.set('port', process.env.PORT || 3000);
 // промежуточное ПО
 app.use(express.static(__dirname + '/public'));
 
+// промежуточное ПО для распознания тестов test=1 в стро- ке запроса
+// app.use(function(req, res){
+//     res.locals.showTests = app.get('env') !== 'production' && req.query.test == '1';
+//     next();
+// });
+
 //маршруты
 app.get('/', function(req, res){
     res.render('home');
